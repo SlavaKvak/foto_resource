@@ -1,8 +1,7 @@
-var mvMainCtrl = function ($scope, mvCashedCourses) {
+var mvMainCtrl = function ($scope) {
 	$scope.helloWord = 'Hi from Angular'
-	//$scope.courses = mvCashedCourses.query();
 };
 
-mvMainCtrl.$inject = ['$scope', 'mvCashedCourses'];
+mvMainCtrl.$inject = ['$scope'];
 
 module.exports = mvMainCtrl;
