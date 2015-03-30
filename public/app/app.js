@@ -1,3 +1,10 @@
+//libs
+window['jQuery'] = require('../vendor/jquery/dist/jquery.js')
+require('../vendor/bootstrap/dist/js/bootstrap.js')
+require('../vendor/toastr/toastr.js')
+require('../vendor/angular/angular.js')
+require('../vendor/angular-resource/angular-resource.js')
+require('../vendor/angular-route/angular-route.js')
 
 //controllers
 var mvMainCtrl = require('./main/mvMainCtrl');
