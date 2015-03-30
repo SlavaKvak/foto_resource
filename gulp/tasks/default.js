@@ -5,6 +5,6 @@ var runSequence = require('run-sequence');
 
 module.exports = gulp.task('default', function () {
     runSequence(
-      ['browserify', 'nodemon']
+      ['browserify', 'less', 'nodemon']
     );
 });

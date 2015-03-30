@@ -1,5 +1,5 @@
 node_modules
 public/vendor
-public/dist/js/bundle.js
+public/dist
 mean-presentation.sublime-project
 mean-presentation.sublime-workspace
