@@ -8,6 +8,8 @@ require('../vendor/angular-ui-router/release/angular-ui-router.js');
 
 //controllers
 var mvMainCtrl = require('./main/mvMainCtrl');
+var galleriesCtrl = require('./galleries/galleriesCtrl');
+var contactCtrl = require('./contact/contactCtrl');
 
 //services
 var mvNotifier = require('./common/mvNotifier');
@@ -30,6 +32,16 @@ appModule.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', f
       url: "/",
       templateUrl: "/partials/main/main",
       controller: mvMainCtrl
+    })
+    .state('galleries', {
+      url: "/galleries",
+      templateUrl: "/partials/galleries/galleries",
+      controller: galleriesCtrl
+    })
+    .state('contact', {
+      url: "/contact",
+      templateUrl: "/partials/contact/contact",
+      controller: contactCtrl
     });
 }]);
 
