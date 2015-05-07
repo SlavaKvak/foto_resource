@@ -1,21 +1,22 @@
 extends ../includes/layout
 
 block main-content
-	.navbar.navbar-default.navbar-fixed-top
-		.container
-			.navbar-header
-				a.navbar-brand(ui-sref="main") PHOTOGRAPHY
-					h6 ANTONINA KVAK
-			.navbar-collapse.navbar-collapse.navbar-responsive-collapse
-				ul.nav.navbar-nav.center-nav
-					li
-						a(ui-sref="main") HOME
-					li
-						a(ui-sref="galleries") GALLERIES
-					li
-						a(ui-sref="contact") CONTACT
-	section.main-content
-		div(ui-view)
+	#wrapper
+		.navbar.navbar-default.navbar-fixed-top
+			.container
+				.navbar-header
+					a.navbar-brand(ui-sref="main") PHOTOGRAPHY
+						h6 ANTONINA KVAK
+				.navbar-collapse.navbar-collapse.navbar-responsive-collapse
+					ul.nav.navbar-nav.center-nav
+						li
+							a(ui-sref="main") HOME
+						li
+							a(ui-sref="galleries") GALLERIES
+						li
+							a(ui-sref="contact") CONTACT
+		section.main-content
+			div(ui-view)
 
-	footer.container.text-center
-		p 2013 MultiVision Corp International Ltd.
+		footer.container.text-center
+			p 2013 MultiVision Corp International Ltd.

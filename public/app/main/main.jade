@@ -1,10 +1,4 @@
 .container
-	.jumbotron
-		h1 MultiVision
-		p Lorem Ipsun Lorem Ipsun Lorem Ipsun Lorem Ipsun Lorem Ipsun Lorem IpsunLorem Ipsun Lorem Ipsun
-
-	.row
-		.col-md-6
-			div{{helloWord}}
-		.col-md-6
-			div{{helloWord}}
+	flex-slider(flex-slide="s in mySlides" animation="slide" control-nav="false" direction-nav="false")
+		li
+			img(ng-src="{{s}}")
