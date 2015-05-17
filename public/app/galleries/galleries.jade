@@ -1,10 +1,6 @@
-.container
-	.jumbotron
-		h1 MultiVision
-		p Lorem Ipsun Lorem Ipsun Lorem Ipsun Lorem Ipsun Lorem Ipsun Lorem IpsunLorem Ipsun Lorem Ipsun
-
+.container-fluid
 	.row
-		.col-md-6
-			div{{helloWord}}
-		.col-md-6
-			div{{helloWord}}
+		.col-md-3(ng-repeat="category in categories")
+			div.category-container
+				img.img-thumbnail(ng-src="{{category.iconUrl}}")
+				div{{category.name}}

@@ -18,6 +18,8 @@ var mvNotifier = require('./common/mvNotifier');
 
 var appModule = angular.module('app', ['ngResource', 'ui.router', 'angular-flexslider'])
 	.controller('mvMainCtrl', mvMainCtrl)
+  .controller('galleriesCtrl', galleriesCtrl)
+  .controller('contactCtrl', contactCtrl)
 	.value('mvToastr', toastr)
 	.factory('mvNotifier', mvNotifier);
 
@@ -33,17 +35,17 @@ appModule.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', f
     .state('main', {
       url: "/",
       templateUrl: "/partials/main/main",
-      controller: mvMainCtrl
+      controller: 'mvMainCtrl'
     })
     .state('galleries', {
       url: "/galleries",
       templateUrl: "/partials/galleries/galleries",
-      controller: galleriesCtrl
+      controller: 'galleriesCtrl'
     })
     .state('contact', {
       url: "/contact",
       templateUrl: "/partials/contact/contact",
-      controller: contactCtrl
+      controller: 'contactCtrl'
     });
 }]);
 

@@ -1,5 +1,5 @@
 var mvMainCtrl = function ($scope) {
-	$scope.helloWord = 'Hi from Contact Page'
+	$scope.contacts = {phone: '12345678', email:'blabla@gmail.com', facebook:'facebook/page'}
 };
 
 mvMainCtrl.$inject = ['$scope'];
