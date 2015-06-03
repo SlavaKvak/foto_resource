@@ -2,6 +2,8 @@
 	// users = require('../controllers/users'),
 	//courses = require('../controllers/courses');
 
+var categoriesCtrl = require('../controllers/categoriesCtrl');
+
 module.exports = function(app){
 
 	// app.get('/api/users', auth.requiresRoles('admin'), users.getUsers);
@@ -10,6 +12,8 @@ module.exports = function(app){
 
 	// app.get('/api/courses', courses.getCourses);
 	// app.get('/api/courses/:id', courses.getCourseById);
+
+	app.get('/api/categories', categoriesCtrl.getCategories);
 
 	app.get('/partials/*', function  (req, res) {
 		res.render('../../public/app/' + req.params[0]);

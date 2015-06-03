@@ -16,6 +16,7 @@ var categoryDetailsCtrl = require('./galleries/categoryDetails/categoryDetailsCt
 
 //services
 var mvNotifier = require('./common/mvNotifier');
+var galleriesResource = require('./galleries/galleriesResource');
 
 var appModule = angular.module('app', ['ngResource', 'ui.router', 'angular-flexslider'])
 	.controller('mvMainCtrl', mvMainCtrl)
@@ -23,7 +24,8 @@ var appModule = angular.module('app', ['ngResource', 'ui.router', 'angular-flexs
   .controller('contactCtrl', contactCtrl)
   .controller('categoryDetailsCtrl', categoryDetailsCtrl)
 	.value('mvToastr', toastr)
-	.factory('mvNotifier', mvNotifier);
+	.factory('mvNotifier', mvNotifier)
+  .factory('galleriesResource', galleriesResource);
 
 appModule.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function ($stateProvider, $urlRouterProvider, $locationProvider) {
 
@@ -50,7 +52,7 @@ appModule.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', f
       controller: 'galleriesCtrl'
     })
     .state('galleries.categoryDetails', {
-      url: "/category/{categoryId:int}",
+      url: "/category/{categoryId}",
       templateUrl: "/partials/galleries/categoryDetails/categoryDetails",
       controller: 'categoryDetailsCtrl'
     })

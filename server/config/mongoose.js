@@ -1,15 +1,16 @@
 var mongoose = require('mongoose'),
-	userModel = require('../models/User'),
-	courseModel = require('../models/Course');
+	categoryModel = require('../models/Category'),
+	assetModel = require('../models/Asset');
 
 module.exports = function(config) {
 	mongoose.connect(config.db);
 	var db = mongoose.connection;
 	db.on('error', console.error.bind(console, 'connection error...'));
 	db.once('open', function callback () {
-		console.log('multivison db opened');
+		console.log('fotoGallery db opened');
 	});
 
-	userModel.createDefaultUsers();
-	courseModel.createDefaultCourses();
+	categoryModel.createDefaultCategories();
+	assetModel.createDefaultAssets();
+
 };
