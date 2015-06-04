@@ -2,7 +2,8 @@
 	// users = require('../controllers/users'),
 	//courses = require('../controllers/courses');
 
-var categoriesCtrl = require('../controllers/categoriesCtrl');
+var categoriesCtrl = require('../controllers/categoriesCtrl'),
+	assetsCtrl = require('../controllers/assetsCtrl');
 
 module.exports = function(app){
 
@@ -14,6 +15,8 @@ module.exports = function(app){
 	// app.get('/api/courses/:id', courses.getCourseById);
 
 	app.get('/api/categories', categoriesCtrl.getCategories);
+
+	app.get('/api/categories/:categoryId/assets', assetsCtrl.getAssetsByCategoryId);
 
 	app.get('/partials/*', function  (req, res) {
 		res.render('../../public/app/' + req.params[0]);

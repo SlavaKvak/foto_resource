@@ -1,6 +1,6 @@
 .container-fluid
 	.row
 		.col-md-3(ng-repeat="category in categories")
-			div.category-container(ui-sref="galleries.categoryDetails({ categoryId: category._id })")
+			div.category-container(ui-sref="galleries.galleryDetails({ galleryId: category._id })")
 				img.img-thumbnail(ng-src="{{category.thumbnailUrl}}")
 				div{{category.title}}

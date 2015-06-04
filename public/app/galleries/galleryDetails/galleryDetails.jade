@@ -1,0 +1,7 @@
+.container-fluid.category-details
+	flex-slider#slider(flex-slide="asset in assets track by asset._id" animation="slide" control-nav="false" animation-loop="false" slideshow="false" sync="#carousel-slider")
+		li
+			img(ng-src="{{asset.imgUrl}}")
+	flex-slider#carousel(flex-slide="asset in assets track by asset._id" animation="slide" control-nav="false" animation-loop="false" slideshow="false" item-width="210" item-margin="5" as-nav-for="#slider-slider")
+		li
+			img(ng-src="{{asset.imgUrl}}")

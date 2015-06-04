@@ -12,20 +12,22 @@ require('../vendor/angular-flexslider/angular-flexslider.js');
 var mvMainCtrl = require('./main/mvMainCtrl');
 var galleriesCtrl = require('./galleries/galleriesCtrl');
 var contactCtrl = require('./contact/contactCtrl');
-var categoryDetailsCtrl = require('./galleries/categoryDetails/categoryDetailsCtrl');
+var galleryDetailsCtrl = require('./galleries/galleryDetails/galleryDetailsCtrl');
 
 //services
 var mvNotifier = require('./common/mvNotifier');
 var galleriesResource = require('./galleries/galleriesResource');
+var assetService = require('./galleries/galleryDetails/assetService')
 
 var appModule = angular.module('app', ['ngResource', 'ui.router', 'angular-flexslider'])
 	.controller('mvMainCtrl', mvMainCtrl)
   .controller('galleriesCtrl', galleriesCtrl)
   .controller('contactCtrl', contactCtrl)
-  .controller('categoryDetailsCtrl', categoryDetailsCtrl)
+  .controller('galleryDetailsCtrl', galleryDetailsCtrl)
 	.value('mvToastr', toastr)
 	.factory('mvNotifier', mvNotifier)
-  .factory('galleriesResource', galleriesResource);
+  .factory('galleriesResource', galleriesResource)
+  .factory('assetService', assetService);
 
 appModule.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function ($stateProvider, $urlRouterProvider, $locationProvider) {
 
@@ -51,10 +53,10 @@ appModule.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', f
       templateUrl: "/partials/galleries/galleries",
       controller: 'galleriesCtrl'
     })
-    .state('galleries.categoryDetails', {
-      url: "/category/{categoryId}",
-      templateUrl: "/partials/galleries/categoryDetails/categoryDetails",
-      controller: 'categoryDetailsCtrl'
+    .state('galleries.galleryDetails', {
+      url: "/{galleryId}",
+      templateUrl: "/partials/galleries/galleryDetails/galleryDetails",
+      controller: 'galleryDetailsCtrl'
     })
     .state('contact', {
       url: "/contact",
